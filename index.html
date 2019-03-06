@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="awesome">
+    <ul>
+      <li>1</li>
+      <li num="2">2</li>
+      <li class="list-item" num>3</li>
+      <li>4</li>
+      <li>5<a href="https://www.google.com" id="google">Google</a></li>
+    </ul>
+    <input type="te:xt" disabled>
+    <input type="checkbox" checked>
+  </div>
+
+  <script type="module">
+    import querySimpleSelector from './index.js'
+
+    // test('*')
+    // test('li')
+    // test('#google')
+    // test('.awesome')
+    // test('[num]')
+    // test('[num=""]')
+    // test('[type="te:xt"]')
+    // test(':first-child')
+    // test(':last-child')
+    // test(':checked')
+    // test(':disabled')
+    // test(':root')
+    // test(':not(:first-child)')
+    // test(':empty')
+    // test(':nth-child(4n - 1)')
+    // test(':nth-last-child(4n - 1)')
+    // test(':only-of-type')
+    // test(':nth-last-of-type(4n - 1)')
+    // test(':only-child')
+    // test('li[num=2]:nth-child(3)')
+    // test('li[num].list-item:nth-child(-5n+ 13)')
+    // test('li.list-item:nth-child(-5n+ 13)[num]')
+    // test('li.list-item[num]:nth-child(-5n+ 13)')
+    test('li[num].list-item:nth-of-type(-5n+ 13)')
+    test('li.list-item:nth-of-type(-5n+ 13)[num]')
+    test('li.list-item[num]:nth-of-type(-5n+ 13)')
+
+    function test (selectorStr) {
+      console.log(
+        '%cFOUND%c' + selectorStr + '\n',
+        'background: green; color: white; padding: 0 0.5em; font-size: 14px;',
+        'background: #999; color: white; padding: 0 0.5em; font-size: 14px;',
+        querySimpleSelector(document.documentElement, selectorStr)
+      )
+    }
+  </script>
+</body>
+</html>
