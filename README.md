@@ -1,5 +1,5 @@
 # A simple querySelector
-The `querySelector` reimplements a part of Browser's `Node.querySelector`.
+The `querySelector` reimplements a part of Browser's `Element.prototype.querySelector`.
 
 * It can handle most single selectors and theirs combination
 * It can't handle the combinators: `> || + ~ [whitespace]`
